@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { Github, Linkedin, Mail, MapPin, Menu, MessageCircle, Section, Send } from "lucide-react"
+import { Github, Linkedin, Mail, MapPin, Menu, MessageCircle, Send } from "lucide-react"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -18,7 +18,6 @@ import ImageInternal from "../app/public/dashboard.jpg"
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false)
-  const { theme } = useTheme()
   const [activeSection, setActiveSection] = useState("About")
 
   const navigationItems = ["About", "Experience", "Education", "Skills", "Projects", "Contact"]
@@ -27,7 +26,9 @@ export default function Home() {
     <div className="space-y-4">
       
       {navigationItems.map((item) => (
-        <Link href={`#${item}`}>
+        <Link
+        key={item}
+        href={`#${item}`}>
         <Button
           key={item}
           variant="ghost"
