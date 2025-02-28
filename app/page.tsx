@@ -1,49 +1,61 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Image from "next/image"
-import { motion } from "framer-motion"
-import { Github, Linkedin, Mail, MapPin, Menu, MessageCircle, Send } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Separator } from "@/components/ui/separator"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Textarea } from "@/components/ui/textarea"
-import { ThemeToggle } from "@/components/theme-toggle"
-import Link from "next/link"
-import ImageInternal from "../app/public/dashboard.jpg"
-
+import { useState } from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  MapPin,
+  Menu,
+  MessageCircle,
+  Send,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Separator } from "@/components/ui/separator";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Textarea } from "@/components/ui/textarea";
+import { ThemeToggle } from "@/components/theme-toggle";
+import Link from "next/link";
+import ImageInternal from "../app/public/dashboard.jpg";
 
 export default function Home() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [activeSection, setActiveSection] = useState("About")
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("About");
 
-  const navigationItems = ["About", "Experience", "Education", "Skills", "Projects", "Contact"]
+  const navigationItems = [
+    "About",
+    "Experience",
+    "Education",
+    "Skills",
+    "Projects",
+    "Contact",
+  ];
 
   const NavigationLinks = () => (
     <div className="space-y-4">
-      
       {navigationItems.map((item) => (
-        <Link
-        key={item}
-        href={`#${item}`}>
-        <Button
-          key={item}
-          variant="ghost"
-          className={`w-full justify-start ${activeSection === item ? "bg-primary/10" : ""}`}
-          onClick={() => {
-            setActiveSection(item)
-            setIsOpen(false)
-          }}
-        >
-          {item}
-          
-        </Button>
+        <Link key={item} href={`#${item}`}>
+          <Button
+            key={item}
+            variant="ghost"
+            className={`w-full justify-start ${
+              activeSection === item ? "bg-primary/10" : ""
+            }`}
+            onClick={() => {
+              setActiveSection(item);
+              setIsOpen(false);
+            }}
+          >
+            {item}
+          </Button>
         </Link>
       ))}
     </div>
-  )
+  );
 
   return (
     <div className="min-h-screen bg-background">
@@ -96,22 +108,32 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
-                <a href="mailto:mrloang79@gmail.com" className="hover:text-primary">
+                <a
+                  href="mailto:mrloang79@gmail.com"
+                  className="hover:text-primary"
+                >
                   MRLOANG78@GMAIL.COM
                 </a>
               </div>
             </div>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+          >
             <Card className="mb-8">
               <CardContent className="pt-6">
                 <h2 className="text-2xl font-bold mb-4">About Me</h2>
                 <p className="text-lg leading-relaxed">
-                  I am an experienced BackEnd Developer proficient in C#, Java, and SQL Server. I specialize in
-                  creating web APIs, Windows Form applications, and Blazor websites. My expertise extends to handling
-                  complex database structures using T-SQL in SQL Server. With a passion for clean code and efficient
-                  solutions, I strive to deliver high-quality software that meets and exceeds client expectations.
+                  I am an experienced BackEnd Developer proficient in C#, Java,
+                  and SQL Server. I specialize in creating web APIs, Windows
+                  Form applications, and Blazor websites. My expertise extends
+                  to handling complex database structures using T-SQL in SQL
+                  Server. With a passion for clean code and efficient solutions,
+                  I strive to deliver high-quality software that meets and
+                  exceeds client expectations.
                 </p>
               </CardContent>
             </Card>
@@ -137,39 +159,53 @@ export default function Home() {
           <Separator className="my-8 lg:my-12" />
 
           {/* Experience Section */}
-          
+
           <motion.section
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
             className="mb-8 lg:mb-12"
           >
-             
-            <h2 className="mb-6 text-2xl font-bold sm:text-3xl" >Experience</h2>
-          
+            <h2 className="mb-6 text-2xl font-bold sm:text-3xl">Experience</h2>
+
             <Card className="mb-6">
               <CardContent className="pt-6">
                 <h3 className="text-xl font-semibold">BackEnd Developer</h3>
-                <p className="text-sm text-muted-foreground mb-4">Tonaire Digital • 2023 - Present</p>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Tonaire Digital • 2023 - Present
+                </p>
                 <ul className="list-disc pl-5 space-y-2">
-                  <li>Led the development of enterprise-level web applications using C# and ASP.NET Core.</li>
-                  <li>Implemented complex database solutions using SQL Server and optimized query performance.</li>
-                  <li>Mentored junior developers and conducted code reviews to ensure high code quality.</li>
+                  <li>
+                    Led the development of enterprise-level web applications
+                    using C# and ASP.NET Core.
+                  </li>
+                  <li>
+                    Implemented complex database solutions using SQL Server and
+                    optimized query performance.
+                  </li>
+                  <li>
+                    Mentored junior developers and conducted code reviews to
+                    ensure high code quality.
+                  </li>
                 </ul>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="pt-6">
-                <h3 className="text-xl font-semibold">IT  Assitant</h3>
-                <p className="text-sm text-muted-foreground mb-4">Sorya Center Point• 2022- 2023</p>
+                <h3 className="text-xl font-semibold">IT Assitant</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Sorya Center Point• 2022- 2023
+                </p>
                 <ul className="list-disc pl-5 space-y-2">
-                  <li>Collaborated with cross-functional teams to deliver high-quality software solutions.</li>
+                  <li>
+                    Collaborated with cross-functional teams to deliver
+                    high-quality software solutions.
+                  </li>
                 </ul>
               </CardContent>
             </Card>
-          
           </motion.section>
-          
+
           {/* Education Section */}
           <motion.section
             id="Education"
@@ -178,19 +214,24 @@ export default function Home() {
             transition={{ delay: 1 }}
             className="mb-8 lg:mb-12"
           >
-           
             <h2 className="mb-6 text-2xl font-bold sm:text-3xl">Education</h2>
-          
+
             <Card>
               <CardContent className="pt-6">
-                <h3 className="text-xl font-semibold">Bachelor of Science in Information Technology</h3>
-                <p className="text-sm text-muted-foreground mb-4">National University of Management • 2013 - 2017</p>
-                <p>Graduated with honors. Specialized in Software Engineering and Database Management.</p>
+                <h3 className="text-xl font-semibold">
+                  Bachelor of Science in Information Technology
+                </h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  National University of Management • 2013 - 2017
+                </p>
+                <p>
+                  Graduated with honors. Specialized in Software Engineering and
+                  Database Management.
+                </p>
               </CardContent>
             </Card>
-           
           </motion.section>
-         
+
           {/* Skills Section */}
           <motion.section
             id="Skills"
@@ -199,7 +240,9 @@ export default function Home() {
             transition={{ delay: 1.2 }}
             className="mb-8 lg:mb-12"
           >
-            <h2 className="mb-6 text-2xl font-bold sm:text-3xl">Technical Skills</h2>
+            <h2 className="mb-6 text-2xl font-bold sm:text-3xl">
+              Technical Skills
+            </h2>
             <Card>
               <CardContent className="pt-6">
                 <div className="grid gap-4">
@@ -209,7 +252,7 @@ export default function Home() {
                     { skill: "SQL Server", level: 88 },
                     { skill: "Blazor", level: 82 },
                     { skill: "Web API", level: 85 },
-                    { skill: ".NET", level: 87 }
+                    { skill: ".NET", level: 87 },
                   ].map((item) => (
                     <div key={item.skill}>
                       <div className="mb-2 flex justify-between">
@@ -229,7 +272,6 @@ export default function Home() {
                 </div>
               </CardContent>
             </Card>
-          
           </motion.section>
 
           {/* Projects Section */}
@@ -244,22 +286,56 @@ export default function Home() {
             <div className="grid gap-6 md:grid-cols-2">
               <Card>
                 <CardContent className="pt-6">
-                  <h3 className="text-xl font-semibold mb-2">E-commerce Platform </h3>
-                  <p className="mb-4">Developed a full-stack e-commerce solution using .NET Core </p>
-                  <p className="text-sm text-muted-foreground">Technologies: C#, ASP.NET Core, SQL Server,Dev Express UI Framework</p>
+                  <h3 className="text-xl font-semibold mb-2">
+                    E-commerce Platform{" "}
+                  </h3>
+                  <p className="mb-4">
+                    Developed a full-stack e-commerce solution using .NET Core{" "}
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    Technologies: C#, ASP.NET Core, SQL Server,Dev Express UI
+                    Framework
+                  </p>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="pt-6">
-                  <h3 className="text-xl font-semibold mb-2">Human Resource System</h3>
-                  <p className="mb-4">Built a robust inventory tracking system for a large retail chain.</p>
-                  <p className="text-sm text-muted-foreground">Technologies: C#, ASP.NET Core, SQL Server,Dev Express UI Framework</p>
+                  <h3 className="text-xl font-semibold mb-2">
+                    Human Resource System
+                  </h3>
+                  <p className="mb-4">
+                    Built a robust inventory tracking system for a large retail
+                    chain.
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    Technologies: C#, ASP.NET Core, SQL Server,Dev Express UI
+                    Framework
+                  </p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="pt-p">
+                  <h3 className="text-xl font-semibold mb-2">
+                    Point Of System
+                  </h3>
+                  <p className="mb-4">
+                    Built a robust inventory tracking system for PlayGround And
+                    Bevearage Stock Alert
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    Technologies: C#, ASP.NET Core, SQL Server,Native UI
+                    Framework
+                  </p>
                 </CardContent>
               </Card>
             </div>
+            {/*
             <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {[1, 2].map((index) => (
-                <div key={index} className="relative aspect-video overflow-hidden rounded-lg">
+                <div
+                  key={index}
+                  className="relative aspect-video overflow-hidden rounded-lg"
+                >
                   <Image
                     src={ImageInternal}
                     alt={`Project ${index}`}
@@ -270,11 +346,12 @@ export default function Home() {
                 </div>
               ))}
             </div>
+        
+          */}
           </motion.section>
-
           {/* Contact Form Section */}
           <motion.section
-          id="#Contact"
+            id="#Contact"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.8 }}
@@ -285,19 +362,32 @@ export default function Home() {
               <CardContent className="pt-6">
                 <form className="space-y-4">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-1">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium mb-1"
+                    >
                       Name
                     </label>
                     <Input id="name" placeholder="Your Name" />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-1">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium mb-1"
+                    >
                       Email
                     </label>
-                    <Input id="email" type="email" placeholder="your@email.com" />
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="your@email.com"
+                    />
                   </div>
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium mb-1">
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-medium mb-1"
+                    >
                       Message
                     </label>
                     <Textarea id="message" placeholder="Your message here..." />
@@ -312,6 +402,5 @@ export default function Home() {
         </main>
       </div>
     </div>
-  )
+  );
 }
-
