@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Github,
@@ -20,7 +19,6 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Textarea } from "@/components/ui/textarea";
 import { ThemeToggle } from "@/components/theme-toggle";
 import Link from "next/link";
-import ImageInternal from "../app/public/dashboard.jpg";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
