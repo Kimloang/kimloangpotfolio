@@ -222,7 +222,7 @@ export default function Home() {
                   Bachelor of Science in Information Technology
                 </h3>
                 <p className="text-sm text-muted-foreground mb-4">
-                  National University of Management • 2013 - 2017
+                  National University of Management • 2019 - 2023
                 </p>
                 <p>
                   Graduated with honors. Specialized in Software Engineering and
